@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 80px 120px;
+    background: #eee;
+}
+
+.app {
+    font-family: 'Yomogi', cursive;
+}

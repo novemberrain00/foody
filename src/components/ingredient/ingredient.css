@@ -1,0 +1,20 @@
+.input {
+    max-width: 906px;
+    width: 100%;
+    padding: 30px 45px;
+    color: #D13CA4;
+    border-radius: 40px;
+    font-family: 'Yomogi', cursive;
+    font-weight: normal;
+    border: none;
+    background: #FFEA04;
+    font-size: 20px;
+}
+
+.input::placeholder {
+    color: #D13CA4;
+}
+
+.input:focus {
+    outline: none;
+}
