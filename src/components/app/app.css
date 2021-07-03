@@ -13,3 +13,9 @@ body {
         padding: 50px 70px;
     }
 }
+
+@media screen and (max-width: 400px) {
+    body {
+        padding: 20px 10px;
+    }
+}
