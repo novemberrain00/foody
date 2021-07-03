@@ -14,3 +14,9 @@
 .hamburger__line:last-child {
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 856px) {
+    .hamburger {
+        width: 35px;
+    }
+}

@@ -7,3 +7,9 @@ body {
 .app {
     font-family: 'Yomogi', cursive;
 }
+
+@media screen and (max-width: 856px) {
+    body {
+        padding: 50px 70px;
+    }
+}

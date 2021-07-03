@@ -1,3 +1,30 @@
+@keyframes inputAppearance {
+    from {
+        transform: rotateX(-90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes inputDisappearance {
+    from {
+        transform: rotateX(0deg);
+    }
+
+    to {
+        transform: rotateX(-90deg);
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .input {
     max-width: 906px;
     width: 100%;
@@ -9,6 +36,12 @@
     border: none;
     background: #FFEA04;
     font-size: 20px;
+    animation: inputAppearance 1s;
+    transition: .4s;
+}
+
+.input_removed {
+    animation: inputDisappearance 1s;
 }
 
 .input::placeholder {
@@ -17,4 +50,22 @@
 
 .input:focus {
     outline: none;
+    box-shadow: 0 0 10px 3px #FFEA04;
+}
+
+.input:hover {
+    box-shadow: 0 0 10px 6px #FFEA04;
+}
+
+@media screen and (max-width: 856px) {
+    .input {
+        padding: 18px 25px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .input {
+        font-size: 15px;
+    }
 }

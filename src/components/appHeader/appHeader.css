@@ -2,3 +2,10 @@
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 856px) {
+    .app-header {
+        min-height: 100px;
+        justify-content: space-between;
+    }
+}

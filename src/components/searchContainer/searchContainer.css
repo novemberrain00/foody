@@ -5,6 +5,27 @@
     flex-direction: column;
 }
 
+.search-container__removing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #FE3A9E;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-left: 10px;
+    transition: .8s;
+}
+
+.search-container__removing:hover {
+    cursor: pointer;
+}
+
 .search-container__item {
     margin-top: 55px;
 }
