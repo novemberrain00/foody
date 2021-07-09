@@ -7,10 +7,10 @@ import './appHeader.css'
 export default class AppHeader extends Component {
     render() {
         return (
-            <div className="app-header">
+            <header className="app-header">
                 <Hamburger/>
                 <AllRecipes/>
-            </div>
+            </header>
         )
     }
 } 

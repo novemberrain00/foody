@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import store from '../../store';
+import { addIng } from '../../actions';
+
 import Ingredient from '../ingredient';
-import Add from '../add';
 
 import './searchContainer.css'
 
 class SearchContainer extends Component {
 
-    render() {
-
-        const renderIngs = () => {
-            const ings = [];
-            for(let i = 0; i <= this.props.quantity; i++) {
-                ings.push(<Ingredient key={i}/>)
-            }
-
-            return ings;
+    renderIngs() {
+        const ingsArr = [];
+        for(let i = 0; i < this.props.amountForCycle; i++) {
+            ingsArr.push(<Ingredient amount={this.props.amountForButton}/>)
         }
 
+        return ingsArr;
+    }
+
+    render() {
+        
         return (
             <div className="search-container">
-                {renderIngs()}
-                <Add/>
+                { this.renderIngs() }
+                <button onClick={() => store.dispatch(addIng())} className="search-container__adding">
+                    +
+                </button>
+
             </div>
         )
     }
@@ -30,7 +35,8 @@ class SearchContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        quantity: state.ings.quantity
+        amountForCycle: state.ings.amountForCycle,
+        amountForButton: state.ings.amountForButton
     }
 }
 

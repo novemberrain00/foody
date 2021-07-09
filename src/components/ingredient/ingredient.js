@@ -5,31 +5,47 @@ import store from '../../store';
 
 import './ingredient.css'
 
-export default class Ingredient extends Component {
+class Ingredient extends Component {
     constructor() {
         super()
         this.state={
-            buttonClicked: false
+            showInput: true,
+            inputClassList: "search-container__item input"
         };
 
         this.onInputRemoved = this.onInputRemoved.bind(this)
     }
 
     onInputRemoved() {
-        this.setState({buttonClicked: true});
-        setTimeout(()=>{store.dispatch(remIng())}, 1000);
+        this.setState({inputClassList: "search-container__item input input_removed"});
+        setTimeout(()=>{
+            this.setState({showInput: false});
+            store.dispatch(remIng());
+        }, 990);
     }
 
     render() {
-
-        const inputClassList = this.state.buttonClicked ? 
-                            "search-container__item input input_removed" : "search-container__item input";
-
-        return (
-            <div className="input-wrapper">
-                <input className={inputClassList} placeholder="Название ингредиента..."/>
-                <button onClick={this.onInputRemoved} className="search-container__removing">-</button>
-            </div>
-        )
+        
+        if(this.state.showInput) {
+            if(this.props.amount > 1) {
+                return (
+                    <div className="input-wrapper">
+                        <input className={this.state.inputClassList} placeholder="Название ингредиента..."/>
+                        <button onClick={this.onInputRemoved} className="search-container__removing">-</button>
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="input-wrapper">
+                        <input className={this.state.inputClassList} placeholder="Название ингредиента..."/>
+                    </div>
+                )
+            }
+        } else {
+            return null;
+        }
     }
 }
+
+
+export default Ingredient;

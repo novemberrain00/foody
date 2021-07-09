@@ -10,7 +10,14 @@ const remIng = () => {
     }
 }
 
+const openMenu = () => {
+    return {
+        type: 'MENU_OPENED'
+    }
+}
+
 export {
     addIng,
-    remIng
+    remIng,
+    openMenu
 }

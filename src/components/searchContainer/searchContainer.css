@@ -8,7 +8,7 @@
 .search-container__removing {
     display: flex;
     justify-content: center;
-    align-items: center;
+    line-height: 33px;
     color: #fff;
     background: #FE3A9E;
     border: none;
@@ -28,4 +28,33 @@
 
 .search-container__item {
     margin-top: 55px;
+}
+
+.search-container__adding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #FE3A9E;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 55px;
+    transition: .8s;
+}
+
+.search-container__adding:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 856px){
+    .search-container__adding {
+        width: 35px;
+        height: 35px;
+        font-size: 28px;
+    }
 }

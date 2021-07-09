@@ -1,21 +1,23 @@
 body {
     margin: 0;
-    padding: 80px 120px;
+    padding: 0;
     background: #eee;
 }
 
 .app {
     font-family: 'Yomogi', cursive;
+    position: relative;
+    padding: 80px 120px;
 }
 
 @media screen and (max-width: 856px) {
-    body {
+    .app {
         padding: 50px 70px;
     }
 }
 
 @media screen and (max-width: 400px) {
-    body {
+    .app {
         padding: 20px 10px;
     }
 }
