@@ -11,9 +11,11 @@ import './searchContainer.css'
 class SearchContainer extends Component {
 
     renderIngs() {
-        const ingsArr = [];
-        for(let i = 0; i < this.props.amountForCycle; i++) {
-            ingsArr.push(<Ingredient amount={this.props.amountForButton}/>)
+        const ingsArr = [],
+            { amountForCycle, amountForButton } = this.props;
+            
+        for(let i = 0; i < amountForCycle; i++) {
+            ingsArr.push(<Ingredient amount={amountForButton}/>)
         }
 
         return ingsArr;

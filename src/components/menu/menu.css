@@ -38,7 +38,7 @@
 }
 
 .menu_opened {
-    top: 0;
+    top: 0 !important;
 }
 
 @media screen and (max-width: 700px) {
@@ -59,6 +59,7 @@
 @media screen and (max-width: 400px) {
     .menu {
         height: 100%;
+        top: -108%;
     }
 
     .menu__list {
