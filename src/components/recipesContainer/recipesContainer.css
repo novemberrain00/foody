@@ -1,0 +1,7 @@
+.recipes {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-height: 500px;
+    margin-top: 30px;
+}

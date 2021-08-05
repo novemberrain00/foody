@@ -15,14 +15,13 @@ class SearchContainer extends Component {
             { amountForCycle, amountForButton } = this.props;
             
         for(let i = 0; i < amountForCycle; i++) {
-            ingsArr.push(<Ingredient amount={amountForButton}/>)
+            ingsArr.push(<Ingredient id={i} key={i} amount={amountForButton}/>);
         }
 
         return ingsArr;
     }
 
     render() {
-        
         return (
             <div className="search-container">
                 { this.renderIngs() }
@@ -38,7 +37,8 @@ class SearchContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         amountForCycle: state.ings.amountForCycle,
-        amountForButton: state.ings.amountForButton
+        amountForButton: state.ings.amountForButton,
+        ingsLine: state.ings.ingsLine
     }
 }
 

@@ -16,8 +16,31 @@ const openMenu = () => {
     }
 }
 
+const updIngsArr = (arr) => {
+    return {
+        type: 'INGS_ARRAY_UPDATED',
+        arr
+    }
+}
+
+const openModal = (modalData) => {
+    return {
+        type: 'MODAL_OPENED',
+        modalData
+    }
+}
+
+const closeModal = () => {
+    return {
+        type: 'MODAL_CLOSED'
+    }
+}
+
 export {
     addIng,
     remIng,
-    openMenu
+    openMenu,
+    updIngsArr,
+    openModal,
+    closeModal
 }
