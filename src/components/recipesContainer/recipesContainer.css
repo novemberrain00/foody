@@ -5,3 +5,15 @@
     min-height: 500px;
     margin-top: 30px;
 }
+
+.link {
+    margin: 0 auto;
+    color: #000;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.link_next {
+    margin-left: 100px;
+}

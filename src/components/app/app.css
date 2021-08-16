@@ -10,9 +10,15 @@ body {
     padding: 80px 120px;
 }
 
+@media screen and (max-width: 1200px) {
+    .app {
+        padding: 80px 30px;
+    }
+}
+
 @media screen and (max-width: 856px) {
     .app {
-        padding: 50px 70px;
+        padding: 50px 35px;
     }
 }
 

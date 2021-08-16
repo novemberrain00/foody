@@ -20,10 +20,11 @@ class Ingredient extends Component {
     onInputRemoved() {
         this.setState({inputClassList: "search-container__item input input_removed"});
 
-        const { ingsArr, id } = this.props;
-        ingsArr.splice(id, 1);
+        const { ingsArr, id } = this.props,
+        deletedItem = ingsArr.filter(item => item.id === id)[0];
 
-        console.log(ingsArr);
+        ingsArr.splice(ingsArr.indexOf(deletedItem), 1);
+
         store.dispatch(updIngsArr(ingsArr));
 
         setTimeout(()=>{
@@ -36,8 +37,8 @@ class Ingredient extends Component {
     editIng = (e) => {
         const { value } = e.target,
             { ingsArr, id } = this.props;
-        
-        ingsArr[id] = value;
+
+        ingsArr.filter(item => item.id === id)[0].value = value;
 
         store.dispatch(updIngsArr(ingsArr));
     }
@@ -49,14 +50,14 @@ class Ingredient extends Component {
         if(this.state.showInput) {
             if(this.props.amount > 1) {
                 return (
-                    <div className="input-wrapper">
+                    <div className="input-wrapper" id={this.props.id}>
                         <input onInput={editIng} className={this.state.inputClassList} placeholder="Название ингредиента..."/>
                         <button onClick={onInputRemoved} className="search-container__removing">-</button>
                     </div>
                 )
             } else {
                 return (
-                    <div className="input-wrapper">
+                    <div className="input-wrapper" id={this.props.id}>
                         <input onInput={editIng} className={this.state.inputClassList} placeholder="Название ингредиента..."/>
                     </div>
                 )

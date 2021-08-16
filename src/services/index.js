@@ -1,9 +1,7 @@
 export default class FoodyService {
-    constructor() {
-        this.url = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=5439c2fe&app_key=335b3847bf78d129e80af9d756aedfaf";
-    }
-    async getRecipes() {
-        const response = await fetch(this.url, {
+
+    async getRecipes(url) {
+        const response = await fetch(url, {
             headers: {
               Accept: "application/json",
               mode: "no-cors"
@@ -14,6 +12,17 @@ export default class FoodyService {
             throw new Error('Server Error');
         }
         const result = await response.json();
+        return result;
+    }
+
+    generateRandStr() {
+        let result       = '',
+        words        = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM',
+        max_position = words.length - 1;
+        for(let i = 0; i < 5; ++i) {
+            let position = Math.floor ( Math.random() * max_position );
+            result = result + words.substring(position, position + 1);
+        }
         return result;
     }
 }

@@ -32,7 +32,7 @@ const ingredientsReducer = (state = initialIngredientsState, action) => {
         case 'REM_ING':
             return {
                 ...state,
-                amountForButton: state.amountForButton - 1,
+                amountForButton: state.amountForButton - 1
             }
         case 'INGS_ARRAY_UPDATED':
             console.log(action.arr)
