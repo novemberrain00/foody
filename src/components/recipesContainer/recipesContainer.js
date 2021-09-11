@@ -21,7 +21,6 @@ class RecipesContainer extends Component {
     componentDidMount = async () => {
         await new FoodyService().getRecipes("https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=5439c2fe&app_key=335b3847bf78d129e80af9d756aedfaf")
         .then(res => {
-            console.log(res._links.next.href)
             this.setState({
                 recipesData: res.hits,
                 nextPageUrl: res._links.next.href

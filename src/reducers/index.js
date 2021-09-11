@@ -3,7 +3,9 @@ import { combineReducers } from "redux";
 const initialIngredientsState = {
     amountForCycle: 1,
     amountForButton: 1,
-    ingsArr: []
+    ingsArr: [{id: 0, value: ''}],
+    allRecipes: [],
+    selectedRecipes: []
 
 }
 
@@ -35,10 +37,21 @@ const ingredientsReducer = (state = initialIngredientsState, action) => {
                 amountForButton: state.amountForButton - 1
             }
         case 'INGS_ARRAY_UPDATED':
-            console.log(action.arr)
             return {
                 ...state,
-                ingsArr: action.arr
+                ingsArr: action.ingsArr
+            }
+        case 'RECIPES_SELECTED':
+            console.log(action.selectedRecipes)
+            return {
+                ...state,
+                selectedRecipes: action.selectedRecipes
+            }
+        case 'RECIPES_SET':
+            console.log(action.allRecipes)
+            return {
+                ...state,
+                allRecipes: action.allRecipes
             }
         default:
             return state;

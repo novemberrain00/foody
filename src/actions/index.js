@@ -16,12 +16,27 @@ const openMenu = () => {
     }
 }
 
-const updIngsArr = (arr) => {
+const updIngsArr = (ingsArr) => {
     return {
         type: 'INGS_ARRAY_UPDATED',
-        arr
+        ingsArr
     }
 }
+
+const recipesSelected = (selectedRecipes) => {
+    return {
+        type: 'RECIPES_SELECTED',
+        selectedRecipes
+    }
+}
+
+const setAllRecipes = (allRecipes) => {
+    return {
+        type: 'RECIPES_SET',
+        allRecipes
+    }
+}
+
 
 const openModal = (modalData) => {
     return {
@@ -36,11 +51,15 @@ const closeModal = () => {
     }
 }
 
+
+
 export {
     addIng,
     remIng,
     openMenu,
     updIngsArr,
     openModal,
-    closeModal
+    closeModal,
+    recipesSelected,  
+    setAllRecipes,  
 }

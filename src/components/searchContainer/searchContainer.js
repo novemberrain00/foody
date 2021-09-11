@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import store from '../../store';
-import { addIng, updIngsArr } from '../../actions';
+import { addIng, updIngsArr, setAllRecipes } from '../../actions';
 
 import Ingredient from '../ingredient';
+import FoodyService from '../../services';
 
 import './searchContainer.css'
 
 class SearchContainer extends Component {
 
-    componentDidMount() {
-        const ingsObjArr = this.props.ingsArr;
-
-        ingsObjArr.push({id: ingsObjArr.length, value: ''});
-        
-        store.dispatch(updIngsArr(ingsObjArr))
+    componentDidMount = async () => {
+        await new FoodyService().getRecipes("https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=5439c2fe&app_key=335b3847bf78d129e80af9d756aedfaf")
+        .then(res => {
+            console.log(res);
+            store.dispatch(setAllRecipes(res.hits));
+        });
+    
     }
 
     componentDidUpdate() {
@@ -23,7 +25,7 @@ class SearchContainer extends Component {
 
         ingsObjArr.filter(item => item.value !== '');
         if(ingsObjArr.length < this.props.amountForButton) ingsObjArr.push({id: this.props.amountForCycle-1, value: ''});
-
+        
         store.dispatch(updIngsArr(ingsObjArr))
     }
 
