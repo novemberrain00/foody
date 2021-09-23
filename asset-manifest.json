@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/foody/static/css/main.a7d9cb60.chunk.css",
-    "main.js": "/foody/static/js/main.33325b12.chunk.js",
-    "main.js.map": "/foody/static/js/main.33325b12.chunk.js.map",
+    "main.css": "/foody/static/css/main.f38a56df.chunk.css",
+    "main.js": "/foody/static/js/main.ab71673a.chunk.js",
+    "main.js.map": "/foody/static/js/main.ab71673a.chunk.js.map",
     "runtime-main.js": "/foody/static/js/runtime-main.3a0d4181.js",
     "runtime-main.js.map": "/foody/static/js/runtime-main.3a0d4181.js.map",
-    "static/js/2.eb0ec57f.chunk.js": "/foody/static/js/2.eb0ec57f.chunk.js",
-    "static/js/2.eb0ec57f.chunk.js.map": "/foody/static/js/2.eb0ec57f.chunk.js.map",
+    "static/js/2.29ff9484.chunk.js": "/foody/static/js/2.29ff9484.chunk.js",
+    "static/js/2.29ff9484.chunk.js.map": "/foody/static/js/2.29ff9484.chunk.js.map",
     "index.html": "/foody/index.html",
-    "static/css/main.a7d9cb60.chunk.css.map": "/foody/static/css/main.a7d9cb60.chunk.css.map",
-    "static/js/2.eb0ec57f.chunk.js.LICENSE.txt": "/foody/static/js/2.eb0ec57f.chunk.js.LICENSE.txt"
+    "static/css/main.f38a56df.chunk.css.map": "/foody/static/css/main.f38a56df.chunk.css.map",
+    "static/js/2.29ff9484.chunk.js.LICENSE.txt": "/foody/static/js/2.29ff9484.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3a0d4181.js",
-    "static/js/2.eb0ec57f.chunk.js",
-    "static/css/main.a7d9cb60.chunk.css",
-    "static/js/main.33325b12.chunk.js"
+    "static/js/2.29ff9484.chunk.js",
+    "static/css/main.f38a56df.chunk.css",
+    "static/js/main.ab71673a.chunk.js"
   ]
 }
