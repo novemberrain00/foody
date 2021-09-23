@@ -17,39 +17,37 @@ class Ingredient extends Component {
         this.onInputRemoved = this.onInputRemoved.bind(this)
     }
 
-    parseRecipesList(list, value, newSelectedRecipes) {
-        list.forEach(ingsList => {
+    parseRecipesList(list, value, selectedRecipes) {
+        list.forEach(listItem => {
             let ingsLine = '';
-            ingsList.recipe.ingredientLines.forEach(ing => {
+            listItem.recipe.ingredientLines.forEach(ing => {
                 ingsLine += ing;
             });
 
-            if(ingsLine.toLocaleLowerCase().includes(value)) newSelectedRecipes.push(ingsList)
+            if(ingsLine.toLocaleLowerCase().includes(value)) selectedRecipes.push(listItem);
         });
+
+        store.dispatch(recipesSelected(selectedRecipes));
     }
 
     onInputRemoved() {
         this.setState({inputClassList: "search-container__item input input_removed"});
 
-        const { ingsArr, id, allRecipes } = this.props,
+        const { ingsArr, id, allRecipes, selectedRecipes } = this.props,
         deletedItem = ingsArr.filter(item => item.id === id)[0],
-        selectedRecipes = [];
+        newSelectedRecipes = [];
 
         ingsArr.splice(ingsArr.indexOf(deletedItem), 1);
 
         store.dispatch(updIngsArr(ingsArr));
 
-        ingsArr.forEach(ing => {
-            allRecipes.forEach(recipeObj => {
-                recipeObj.recipe.ingredientLines.forEach(ingElem => {
-                    if(ingElem.toLowerCase().includes(ing.value.toLocaleLowerCase())) {
-                        selectedRecipes.push(recipeObj);
-                    } 
-                }); 
-            });
+        ingsArr.forEach((ing, i) => {
+            if(i < 1) {
+                this.parseRecipesList(allRecipes, ing.value, newSelectedRecipes);
+            } else {
+                this.parseRecipesList(selectedRecipes, ing.value, newSelectedRecipes);
+            }
         })
-
-        store.dispatch(recipesSelected(selectedRecipes))
 
         setTimeout(()=>{
             this.setState({showInput: false});
@@ -71,7 +69,7 @@ class Ingredient extends Component {
             this.parseRecipesList(selectedRecipes, value, newSelectedRecipes);
         }
         
-        store.dispatch(recipesSelected(newSelectedRecipes));
+        
         store.dispatch(updIngsArr(ingsArr));
     }
 
