@@ -46,7 +46,7 @@ export default class Banner extends Component {
                     })
                 }
                 <div onClick={this.changeActivePost} className="banner__next">
-                    <img src="foody/images/arrow-next.svg"/>
+                    <img src={window.location + "/images/arrow-next.svg"}/>
                 </div>
             </div>
         )
