@@ -11,9 +11,9 @@ class App extends Component {
         if(this.props.isBannerVisible) {
             return <Banner 
                 images={[
-                    'foody/images/banner1.jpg', 
-                    'foody/images/banner2.jpg', 
-                    'foody/images/banner3.jpg'
+                    '/images/banner1.jpg', 
+                    '/images/banner2.jpg', 
+                    '/images/banner3.jpg'
                 ]}
                 titles={[
                     "Please to meet you at Foody!", 
