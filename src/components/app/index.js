@@ -23,13 +23,13 @@ class App extends Component {
             />
         } else {
             return(
-                <div className="app" style={{background: "url('foody/images/app-bg.jpg') no-repeat"}}>
+                <div className="app" style={{background: `url('${window.location}/images/app-bg.jpg') no-repeat`}}>
                     <InputsContainer/>
                 </div>
             )
         }
         // return(
-        //     <div className="app" style={{background: "url('foody/images/app-bg.jpg') no-repeat"}}>
+        //     <div className="app" style={{background: `url('${window.location}/images/app-bg.jpg') no-repeat`}}>
         //             <InputsContainer/>
         //         </div>
         // )
