@@ -39,7 +39,7 @@ export default class Banner extends Component {
                         : "banner__post";
 
                         return(
-                            <div style={{background: `url(${img}) no-repeat`}} key={i} className={classList}>
+                            <div style={{background: `url(${window.location + img}) no-repeat`}} key={i} className={classList}>
                                 <h2 className="banner__post-title">{this.props.titles[i]}</h2>
                             </div>
                         )
