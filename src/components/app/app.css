@@ -1,29 +1,27 @@
-body {
+@keyframes appAppearance {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body, html {
     margin: 0;
     padding: 0;
-    background: #eee;
+    overflow: hidden;
 }
 
 .app {
-    font-family: 'Yomogi', cursive;
-    position: relative;
-    padding: 80px 120px;
-}
-
-@media screen and (max-width: 1200px) {
-    .app {
-        padding: 80px 30px;
-    }
-}
-
-@media screen and (max-width: 856px) {
-    .app {
-        padding: 50px 35px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .app {
-        padding: 20px 10px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: appAppearance 0.8s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
