@@ -1,3 +1,27 @@
 .inputs-container {
     width: 50%;
 }
+
+.button {
+    background: rgba(0,0,0,0.4);
+    border: 2px solid #000;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 37px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.8s;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: #fff;
+    background: #000;
+}
+
+.inputs-container__button {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto 0;
+}
+

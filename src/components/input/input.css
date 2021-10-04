@@ -1,3 +1,22 @@
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-wrapper__button {
+    width: 0px;
+    height: 40px;
+    border: none !important;
+    overflow: hidden;
+}
+
+.input-wrapper:hover .input-wrapper__button {
+    width: 40px;
+    border: 2px solid #000 !important;
+    margin-left: 20px;
+}
+
 .input {
     width: calc(100% - 55px);
     font-family: 'Playfair Display';
@@ -5,9 +24,14 @@
     background: rgba(0,0,0,0.4);
     border: 3px solid #000;
     border-radius: 40px;
-    padding: 6px 27px;
+    padding: 15px 27px;
     font-size: 20px;
     color: #fff;
+    transition: 0.8s;
+}
+
+.input:hover {
+    background: #000;
 }
 
 .input:focus {

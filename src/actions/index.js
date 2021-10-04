@@ -4,6 +4,13 @@ const hideBanner = () => {
     }
 }
 
+const addInput = () => {
+    return {
+        type: 'INPUT_ADDED' 
+    }
+}
+ 
 export {
-    hideBanner
+    hideBanner,
+    addInput
 }
