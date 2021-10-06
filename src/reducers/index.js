@@ -5,7 +5,9 @@ const initialBannerState = {
 }
 
 const initialInputsState = {
-    amount: 1
+    inputsArr: [
+        {key:0, value: ""}
+    ]
 }
 
 const bannerReducer = (state = initialBannerState, action) => {
@@ -23,9 +25,17 @@ const bannerReducer = (state = initialBannerState, action) => {
 const inputsReducer = (state = initialInputsState, action) => {
     switch(action.type) {
         case 'INPUT_ADDED':
+            const newArr = [...action.payload],
+            key = newArr[newArr.length-1].key + 1;
+            newArr.push({key, value: ""});
+            
             return {
                 ...state,
-                amount: state.amount + 1
+                inputsArr: newArr
+            }
+        case 'INPUT_REMOVED':
+            return {
+                ...state
             }
         default:
             return state

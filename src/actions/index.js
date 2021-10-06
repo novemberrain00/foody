@@ -4,13 +4,21 @@ const hideBanner = () => {
     }
 }
 
-const addInput = () => {
+const addInput = (payload) => {
     return {
-        type: 'INPUT_ADDED' 
+        type: 'INPUT_ADDED',
+        payload
+    }
+}
+
+const removeInput = () => {
+    return {
+        type: 'INPUT_REMOVED' 
     }
 }
  
 export {
     hideBanner,
-    addInput
+    addInput,
+    removeInput
 }

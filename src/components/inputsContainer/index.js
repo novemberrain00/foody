@@ -9,20 +9,18 @@ import store from '../../store';
 import './inputsContainer.css';
 
 class InputsContainer extends Component {
+    
     render() {
-        const inputsArr = [];
-        for(let i = 1; i <= this.props.amount; i++) {
-            inputsArr.push(Input);
-        };
-
+        const { inputsArr } = this.props;
+    
         return(
             <div className="inputs-container">
                 {
-                    inputsArr.map((Input, i) => {
-                        return <Input key={i}/>
+                    inputsArr.map((item, i) => {
+                        return <Input arr={inputsArr} id={item.id} key={i}/>
                     })
                 }
-                <div onClick={() => store.dispatch(addInput())} 
+                <div onClick={() => store.dispatch(addInput(inputsArr))} 
                     className="inputs-container__button button" 
                     id="append-input">
                     +
@@ -34,7 +32,7 @@ class InputsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        amount: state.inputs.amount
+        inputsArr: state.inputs.inputsArr
     }
 }
 
