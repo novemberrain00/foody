@@ -17,7 +17,7 @@ class InputsContainer extends Component {
             <div className="inputs-container">
                 {
                     inputsArr.map((item, i) => {
-                        return <Input arr={inputsArr} id={item.id} key={i}/>
+                        return <Input arr={inputsArr} id={item.key} key={i}/>
                     })
                 }
                 <div onClick={() => store.dispatch(addInput(inputsArr))} 

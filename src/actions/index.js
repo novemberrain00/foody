@@ -11,14 +11,23 @@ const addInput = (payload) => {
     }
 }
 
-const removeInput = () => {
+const removeInput = (payload) => {
     return {
-        type: 'INPUT_REMOVED' 
+        type: 'INPUT_REMOVED' ,
+        payload
+    }
+}
+
+const updateInputValue = (payload) => {
+    return {
+        type: 'INPUT_VALUE_UPDATED',
+        payload
     }
 }
  
 export {
     hideBanner,
     addInput,
-    removeInput
+    removeInput,
+    updateInputValue
 }

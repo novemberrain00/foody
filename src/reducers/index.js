@@ -34,8 +34,24 @@ const inputsReducer = (state = initialInputsState, action) => {
                 inputsArr: newArr
             }
         case 'INPUT_REMOVED':
+            const { inputsArr } = state;
+            const deletedItem = inputsArr.indexOf(...inputsArr.filter(item => item.key === action.payload)),
+                firstArr = inputsArr.slice(0, deletedItem),
+                lastArr = inputsArr.slice(deletedItem+1, inputsArr.length),
+                totalArr = [...firstArr, ...lastArr];
+
             return {
-                ...state
+                ...state,
+                inputsArr: totalArr
+            }
+        case 'INPUT_VALUE_UPDATED':
+            const {id, value} = action.payload,
+            editedArr = state.inputsArr,
+            editedItem = editedArr.indexOf(...editedArr.filter(item => item.key === id));
+            editedArr[editedItem].value = value;
+            return {
+                ...state,
+                inputsArr: editedArr
             }
         default:
             return state
