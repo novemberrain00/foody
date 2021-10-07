@@ -10,15 +10,35 @@
     }
 }
 
+@keyframes inputDisappearance {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+
 .input-wrapper {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    animation: inputAppearance 1s ease;
 }
 
 .input-wrapper:first-child {
     animation: none;
+}
+
+.input-wrapper_showed {
+    animation: inputAppearance 1s ease;;
+}
+
+.input-wrapper_hiden {
+    animation: inputDisappearance 1s ease;
 }
 
 .input-wrapper__button {
