@@ -20,37 +20,35 @@ export default class Input extends Component {
     hideInput = () => {
         const { id } = this.props;
 
-        this.setState({classList: "input-wrapper input-wrapper_hiden"});
-        setTimeout(() => {
+        //this.setState({classList: "input-wrapper input-wrapper_hiden"});
+        //setTimeout(() => {
             store.dispatch(removeInput(id))
-        }, 1000)
+        //}, 1000)
+    }
+
+    renderRemoveButton() {
+        return this.props.arr.length < 2 ? null : <div 
+                                                onClick={this.hideInput}  
+                                                className="input-wrapper__button button" 
+                                                id="remove-input">
+                                                -
+                                            </div>
     }
 
     render() {
         const {id, arr} = this.props;
         
-        if(arr.length < 2) {
-            return <input 
-                    onInput={this.onInput} 
-                    id={id} 
-                    className="input"
-                    type="text" 
-                    placeholder="Enter some ingredient"/>
-        }
         return (
             <div className={this.state.classList}>
                 <input 
                     onInput={this.onInput} 
-                    id={id} className="input" 
+                    id={id} 
+                    className="input" 
                     type="text" 
                     placeholder="Enter some ingredient"
                 />
-                <div 
-                    onClick={this.hideInput}  
-                    className="input-wrapper__button button" 
-                    id="remove-input">
-                    -
-                </div>
+
+                {this.renderRemoveButton()} 
             </div> 
         )
     }

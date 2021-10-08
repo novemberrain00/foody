@@ -25,3 +25,14 @@
     margin: 20px auto 0;
 }
 
+@media screen and (max-width: 991px) {
+    .inputs-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .inputs-container {
+        width: 90%;
+    }
+}

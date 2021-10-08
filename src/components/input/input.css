@@ -19,6 +19,7 @@
     to {
         opacity: 0;
         transform: translateX(100%);
+        display: none;
     }
 }
 
@@ -34,11 +35,11 @@
 }
 
 .input-wrapper_showed {
-    animation: inputAppearance 1s ease;;
+    animation: inputAppearance 1s ease;
 }
 
 .input-wrapper_hiden {
-    animation: inputDisappearance 1s ease;
+    animation: inputDisappearance 1s ease forwards !important;
 }
 
 .input-wrapper__button {
