@@ -14,14 +14,15 @@
     from {
         opacity: 1;
         transform: translateX(0);
+        display: flex;
     }
 
     to {
         opacity: 0;
         transform: translateX(100%);
-        display: none;
     }
 }
+
 
 
 .input-wrapper {
@@ -39,7 +40,7 @@
 }
 
 .input-wrapper_hiden {
-    animation: inputDisappearance 1s ease forwards !important;
+    animation: inputDisappearance 1s ease forwards !important; 
 }
 
 .input-wrapper__button {

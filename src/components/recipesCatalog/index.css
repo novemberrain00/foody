@@ -1,0 +1,119 @@
+.recipes-catalog__link {
+    font-family: 'Playfair Display';
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    color: #000;
+}
+
+.recipes-catalog__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recipes-catalog__block {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top: 30px;
+    left: 100px;
+    right: 100px;
+    bottom: 30px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.recipes-catalog__block:hover {
+    overflow: overlay;
+}
+
+.recipes-catalog__block::-webkit-scrollbar {
+    width: 8px; 
+    background-color: #fff;
+    opacity: 1;
+}
+
+.recipes-catalog__block::-webkit-scrollbar-thumb {
+    background-color: #2c2c2c;
+    border-radius: 9em;
+}
+
+.recipes-catalog__block_hiden {
+    display: none;
+}
+
+.recipes__modal {
+    position: absolute;
+    background: #fff;
+    top: 30px;
+    left: 40px;
+    bottom: 30px;
+    right: 40px;
+    padding: 0 35px;
+}
+
+.recipes__modal_hiden {
+    display: none;
+}
+
+.recipes__modal-title {
+    font-family: 'Playfair Display';
+    font-size: 35px;
+}
+
+.recipes__modal-img {
+    float: right;
+}
+
+.recipes__modal-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.recipes__modal-ingredient {
+    margin-bottom: 15px;
+    font-family: 'Playfair Display';
+    font-size: 18px;
+}
+
+.recipes-catalog__block::-webkit-scrollbar-button:vertical:start:decrement {
+    display: none;
+}
+
+.recipes-catalog__block::-webkit-scrollbar-button:vertical:end:increment {
+   display: none;
+}
+
+.recipes-catalog__recipe {
+    margin-bottom: 20px;
+}
+
+.cross {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    z-index: 1;
+}
+
+.cross__line {
+    display: block;
+    background: #000;
+    width: 50px;
+    margin-top: 20px;
+    height: 3px;
+}
+
+.cross__line:last-child {
+    margin-top: 0;
+}
+
+.cross__line:first-child {
+    transform: rotate(45deg);
+}
+
+.cross__line:last-child {
+    transform: rotate(-45deg);
+}

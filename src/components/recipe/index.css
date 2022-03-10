@@ -1,0 +1,22 @@
+.recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background: rgba(249, 249, 249, 0.6);
+}
+
+.recipe__img {
+    width: 70%;
+}
+
+.recipe__title {
+    font-family: 'Playfair Display';
+}
+
+.recipe__title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+

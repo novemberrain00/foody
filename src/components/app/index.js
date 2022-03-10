@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Banner from '../banner';
 import InputsContainer from '../inputsContainer';
+import RecipesCatalog from '../recipesCatalog/';
 
 import './app.css';
 
@@ -21,13 +22,14 @@ class App extends Component {
                     "Just input some ingredients into fields and have a fun"
                 ]}
             />
-        } else {
-            return(
-                <div className="app" style={{background: `url('${window.location}/images/app-bg.jpg') no-repeat`}}>
-                    <InputsContainer/>
-                </div>
-            )
-        }
+        } 
+        return(
+            <div className="app" style={{background: `url('${window.location}/images/app-bg.jpg') no-repeat`}}>
+                <RecipesCatalog/>
+                <InputsContainer/>
+            </div>
+        )
+        
         return(
             <div className="app" style={{background: `url('${window.location}/images/app-bg.jpg') no-repeat`}}>
                     <InputsContainer/>
